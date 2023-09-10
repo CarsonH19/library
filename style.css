@@ -1,0 +1,28 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .book h2 {
+    margin: 0;
+  }
+  
+  .book p {
+    margin: 0;
+  }
+
+  #book-container {
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    border: 3px solid red;
+  }
+
+  
