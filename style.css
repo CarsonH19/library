@@ -25,9 +25,9 @@ header {
   background-color: var(--primary-color);
   height: 15vh;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-row: 1 /2;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   font-family: "Space Mono";
   color: var(--accent-color-two);
@@ -47,16 +47,6 @@ h1, h2, button {
   text-shadow: 0px 0px 5px var(--accent-color-two);
 }
 
-.header-center {
-  display: flex;
-  justify-content: center;
-}
-
-.header-center input {
-  width: 40vw;
-  background-color: #fbfbfb;
-}
-
 .header-right {
   display: flex;
   justify-content: center;
@@ -64,11 +54,18 @@ h1, h2, button {
 
 .header-right button {
   background-color: rgba(0, 0, 0, 0);
-  font-weight: 700;
+  font-weight: 900;
   border: 3px solid var(--accent-color-two);
   border-radius: 5px;
+  width: 20vw;
+  height: 5vh;
   padding: 10px 40px;
   font-family: "Space Mono";
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.0rem;
+
+
   color: var(--accent-color-two);
 
 

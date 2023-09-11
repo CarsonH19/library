@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('click', function(event) {
       if (event.target === modal) {
           modal.style.display = 'none';
-          
+          overlay.style.display = 'none';
       }
   });
 });
