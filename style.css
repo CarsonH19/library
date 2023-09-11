@@ -1,32 +1,70 @@
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+:root {
+  --primary-color: #37306B;
+  --secondary-color: #66347F;
+  --accent-color-one: #9E4784;
+  --accent-color-two: #D27685;
+  --font-family: "Space Mono";
+ }
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.book {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-  }
-  
-  .book h2 {
-    margin: 0;
-  }
-  
-  .book p {
-    margin: 0;
-  }
 
-  #book-container {
-    width: 90vw;
-    height: 90vh;
-    display: flex;
-    border: 3px solid red;
-  }
+.content {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+}
 
-  /* Modal */
-/* Modal Styling */
+/* --------------Header----------------- */
+
+header {
+  background-color: var(--primary-color);
+  height: 15vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-row: 1 /2;
+  justify-content: center;
+  align-items: center;
+  font-family: "Space Mono";
+  color: var(--accent-color-two);
+}
+
+.header-left {
+  display: flex;
+  justify-content: center;
+}
+
+.header-center {
+  display: flex;
+  justify-content: center;
+}
+
+.header-center input {
+  width: 40vw;
+}
+
+.header-right {
+  display: flex;
+  justify-content: center;
+}
+
+.header-right button {
+  background-color: rgba(0, 0, 0, 0);
+  font-weight: 700;
+  border: 3px solid var(--accent-color-two);
+  border-radius: 5px;
+  padding: 10px 40px;
+  font-family: "Space Mono";
+  color: var(--accent-color-two);
+
+
+}
+
+/* Modal & Form */
 .modal {
   display: none;
   position: fixed;
@@ -60,3 +98,39 @@ body{
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Main */
+main {
+background-color: var(--secondary-color);
+padding: 30px 50px 50px 50px;
+grid-row: 2 / 3;
+}
+
+#book-container {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;  font-family: "Space Mono";
+  color: var(--accent-color-two);
+}
+
+.book {
+  background-color: var(--primary-color);
+  border: 3px solid var(--accent-color-one);
+  border-radius: 20px;
+  max-width: 20vw;
+  max-height: 20vh;
+  padding: 20px;
+  margin: 10px;
+}
+
+.book h2 {
+  margin: 0;
+}
+
+.book p {
+  margin: 0;
+}
+
