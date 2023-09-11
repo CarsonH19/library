@@ -1,3 +1,5 @@
+
+// Library array, object constructor, and function to add new books.
 const myLibrary = [
   {
     title: 'The Shadow of Bloodmoon',
@@ -31,31 +33,7 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(newBook);
 }
 
-// Modal Functions (Opening & Closing)
-document.addEventListener('DOMContentLoaded', function() {
-  const openModalBtn = document.getElementById('openModalBtn');
-  const modal = document.getElementById('modal');
-  const closeModalBtn = document.getElementById('closeModal');
-  var overlay = document.querySelector('.overlay');
-
-  openModalBtn.addEventListener('click', function() {
-      modal.style.display = 'block';
-      overlay.style.display = 'block';
-  });
-
-  closeModalBtn.addEventListener('click', function() {
-      modal.style.display = 'none';
-      overlay.style.display = 'none';
-  });
-
-  window.addEventListener('click', function(event) {
-      if (event.target === modal) {
-          modal.style.display = 'none';
-          overlay.style.display = 'none';
-      }
-  });
-});
-
+// How to display the books onto the page
 function displayBooks() {
   const container = document.getElementById('book-container');
 
@@ -84,5 +62,58 @@ function displayBooks() {
   });
 }
   
-  // Call the displayBooks function to display the books
+displayBooks();
+
+
+// Modal Functions (Opening & Closing)
+document.addEventListener('DOMContentLoaded', function() {
+  const openModalBtn = document.getElementById('openModalBtn');
+  const modal = document.getElementById('modal');
+  const closeModalBtn = document.getElementById('closeModal');
+  var overlay = document.querySelector('.overlay');
+
+  openModalBtn.addEventListener('click', function() {
+      modal.style.display = 'block';
+      overlay.style.display = 'block';
+  });
+
+  closeModalBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+      overlay.style.display = 'none';
+  });
+
+  window.addEventListener('click', function(event) {
+      if (event.target === modal) {
+          modal.style.display = 'none';
+          overlay.style.display = 'none';
+      }
+  });
+});
+
+//Preventing Default Behavior
+const form = document.querySelector('form'); 
+form.addEventListener('submit', function(event) {
+  //Prevents form submission
+  event.preventDefault(); 
+
+  //Access form elements and get values
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  const pages = document.getElementById('pages').value;
+  const read = document.getElementById('read').checked;
+
+  //Create a new book object
+  const newBook = new Book(title, author, pages, read);
+
+  //Add the new book to the library
+  myLibrary.push(newBook);
+
+  // Clear the form fields after submission
+  document.getElementById('title').value = '';
+  document.getElementById('author').value = '';
+  document.getElementById('pages').value = '';
+  document.getElementById('read').checked = false;
+
+  //Update the display
   displayBooks();
+  });

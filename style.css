@@ -115,9 +115,8 @@ form button {
   height: 5vh;
 }
 
-legend {
-  font-size: 1.8rem;
-  font-weight: 700;
+input[type="radio"]:checked {
+  color: var(--accent-color-one);
 }
 
 .overlay {
