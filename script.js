@@ -36,6 +36,7 @@ function addBookToLibrary(title, author, pages, read) {
 // How to display the books onto the page
 function displayBooks() {
   const container = document.getElementById('book-container');
+  container.innerHTML = '';
 
   myLibrary.forEach(book => {
     const bookDiv = document.createElement('div');
@@ -66,28 +67,27 @@ displayBooks();
 
 
 // Modal Functions (Opening & Closing)
-document.addEventListener('DOMContentLoaded', function() {
-  const openModalBtn = document.getElementById('openModalBtn');
-  const modal = document.getElementById('modal');
-  const closeModalBtn = document.getElementById('closeModal');
-  var overlay = document.querySelector('.overlay');
+const openModalBtn = document.getElementById('openModalBtn');
+const modal = document.getElementById('modal');
+const closeModalBtn = document.getElementById('closeModal');
+const overlay = document.querySelector('.overlay');
 
-  openModalBtn.addEventListener('click', function() {
-      modal.style.display = 'block';
-      overlay.style.display = 'block';
-  });
+openModalBtn.addEventListener('click', function() {
+    modal.style.display = 'block';
+    overlay.style.display = 'block';
+});
 
-  closeModalBtn.addEventListener('click', function() {
-      modal.style.display = 'none';
-      overlay.style.display = 'none';
-  });
+closeModalBtn.addEventListener('click', function(event) {
+  event.stopPropagation();
+  modal.style.display = 'none';
+  overlay.style.display = 'none';
+});
 
-  window.addEventListener('click', function(event) {
-      if (event.target === modal) {
-          modal.style.display = 'none';
-          overlay.style.display = 'none';
-      }
-  });
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+        overlay.style.display = 'none';
+    }
 });
 
 //Preventing Default Behavior
