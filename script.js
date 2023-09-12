@@ -38,7 +38,7 @@ function displayBooks() {
   const container = document.getElementById('book-container');
   container.innerHTML = '';
 
-  myLibrary.forEach(book => {
+  myLibrary.forEach((book, index) => { // Added index parameter
     const bookDiv = document.createElement('div');
     bookDiv.classList.add('book');
 
@@ -54,17 +54,52 @@ function displayBooks() {
     const read = document.createElement('p');
     read.textContent = `Read: ${book.read ? 'Yes' : 'No'}`;
 
+    // Create remove button
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    removeButton.dataset.index = index; // Set a data attribute with the index of the book
+
+    // Add event listener to remove button
+    removeButton.addEventListener('click', function() {
+      removeBook(index);
+    });
+
+    // Create toggle read button
+    const toggleReadButton = document.createElement('button');
+    toggleReadButton.textContent = 'Toggle Read';
+    toggleReadButton.dataset.index = index; // Set a data attribute with the index of the book
+
+    // Add event listener to toggle read button
+    toggleReadButton.addEventListener('click', function() {
+      toggleReadStatus(index);
+    });
+
     bookDiv.appendChild(title);
     bookDiv.appendChild(author);
     bookDiv.appendChild(pages);
     bookDiv.appendChild(read);
-
+    bookDiv.appendChild(removeButton);
+    bookDiv.appendChild(toggleReadButton); // Add toggle read button
     container.appendChild(bookDiv);
   });
+}
+
+function removeBook(index) {
+  myLibrary.splice(index, 1);
+  displayBooks(); // Update the display after removal
 }
   
 displayBooks();
 
+function toggleReadStatus(index) {
+  myLibrary[index].read = !myLibrary[index].read;
+  displayBooks(); // Update the display after toggling read status
+}
+
+function removeBook(index) {
+  myLibrary.splice(index, 1);
+  displayBooks(); // Update the display after removal
+}
 
 // Modal Functions (Opening & Closing)
 const openModalBtn = document.getElementById('openModalBtn');

@@ -11,6 +11,10 @@
   padding: 0;
 }
 
+body {
+  background-color: #000000;
+}
+
 
 .content {
   height: 100vh;
@@ -57,18 +61,13 @@ h1, h2, button {
   font-weight: 900;
   border: 3px solid var(--accent-color-two);
   border-radius: 5px;
-  width: 20vw;
+  width: 50%;
   height: 5vh;
-  padding: 10px 40px;
   font-family: "Space Mono";
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  font-size: 1.0rem;
-
-
+  font-size: 100%;
   color: var(--accent-color-two);
-
-
 }
 
 /* Modal & Form */
@@ -80,7 +79,7 @@ h1, h2, button {
   position: fixed;
   z-index: 1;
   left: 0;
-  top: 0;
+  top: -100px;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -91,9 +90,9 @@ h1, h2, button {
   margin: 15% auto;
   padding: 20px;
   border: 3px solid var(--accent-color-one);
-  width: 50vw;
+  width: 40vw;
   height: auto;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   }
 
 form {
@@ -104,6 +103,25 @@ form {
   gap: 20px;
 }
 
+form h3 {
+  text-align: center;
+  padding: 5px 0px 5px 0px;
+}
+
+form [type='text'] {
+  width:100%;
+  height: 20px;
+  font-size: 1.2rem;
+}
+
+
+
+form [type='number'] {
+  width:30%;  
+  height: 20px;
+  font-size: 1.2rem;
+}
+
 .upperForm {
   display: flex;
   flex-direction: column;
@@ -111,8 +129,18 @@ form {
 }
 
 form button {
-  width: 15vw;
+  background-color: rgba(0, 0, 0, 0);
+  font-weight: 900;
+  border: 3px solid var(--accent-color-two);
+  border-radius: 5px;
+  width: 100%;
   height: 5vh;
+  font-family: "Space Mono";
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  color: var(--accent-color-two);
+  text-align: center;
 }
 
 input[type="radio"]:checked {
@@ -145,23 +173,39 @@ grid-row: 2 / 3;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;  font-family: "Space Mono";
+  justify-content: space-around;  
+  font-family: "Space Mono";
   color: var(--accent-color-two);
+}
+
+ .book button {
+  background-color: rgba(0, 0, 0, 0);
+  font-weight: 900;
+  border: 3px solid var(--accent-color-two);
+  border-radius: 5px;
+  width: 100%;
+  height: 5vh;
+  font-family: "Space Mono";
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.0rem;
+  color: var(--accent-color-two);
+  text-align: center;
 }
 
 .book {
   background-color: var(--primary-color);
   border: 3px solid var(--accent-color-one);
   border-radius: 20px;
-  max-width: 20vw;
-  max-height: 20vh;
-  min-width: 200px;
-  min-height: 300px;
+  max-width: 300px;
+  max-height: 350px;
+  min-width: 300px;
+  min-height: 350px;
   padding: 20px;
   margin: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-evenly;
 }
 
 .book:hover {
